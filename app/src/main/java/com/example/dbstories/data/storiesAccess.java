@@ -5,13 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by usuario on 18/01/18.
+ * Sqlite Helper
  */
 
 public class storiesAccess extends SQLiteOpenHelper {
-
-    private static final int DB_VERSION = 1;
-    private static final String DB_NAME = "narrando.db";
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
@@ -24,6 +21,6 @@ public class storiesAccess extends SQLiteOpenHelper {
     }
 
     public storiesAccess(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DB_NAME, null, DB_VERSION);
+        super(context, StoryContract.DB_NAME, null, StoryContract.DB_VERSION);
     }
 }

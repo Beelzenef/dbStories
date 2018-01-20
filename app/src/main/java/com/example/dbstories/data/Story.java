@@ -10,6 +10,8 @@ public class Story {
     private String title;
     private String author;
 
+    public static final String TAG = "historia";
+
     public int getId() {
         return id;
     }
