@@ -23,6 +23,8 @@ public class StoryContract {
                 BaseColumns._ID, COLUMN_TITLE, COLUMN_AUTHOR
         };
 
+        public static final String COLUMN_DEFAULT_SORT = COLUMN_TITLE;
+
         public static final String SQL_CREATE_ENTRIES = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT,%s TEXT NOT NULL,%s TEXT NOT NULL,%s TEXT NOT NULL,%s TEXT NOT NULL)",
                 TABLE_NAME,
                 BaseColumns._ID,
