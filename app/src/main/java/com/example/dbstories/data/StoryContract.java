@@ -17,6 +17,7 @@ public class StoryContract {
     public static class StoryEntry implements BaseColumns {
 
         public static final String TABLE_NAME = "historias";
+        public static final String COLUMN_ID = "id";
         public static final String COLUMN_TITLE = "titulo";
         public static final String COLUMN_AUTHOR = "autor";
         public static final String[] ALL_COLUMNS = new String[]{
