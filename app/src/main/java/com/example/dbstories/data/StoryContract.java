@@ -35,6 +35,8 @@ public class StoryContract {
 
         public static final String SQL_DELETE_ENTRIES = String.format("DROP TABLE IF EXISTS %s", TABLE_NAME);
 
+        public static final String SQL_UPDATE_ENTRIES = "";
+
         public static final String SQL_INSERT_ENTRIES = String.format("INSERT INTO %s (%s,%s) VALUES ('%s','%s'),('%s','%s')",
                 TABLE_NAME,
                 COLUMN_TITLE,

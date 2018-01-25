@@ -1,7 +1,9 @@
 package com.example.dbstories.data;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.dbstories.data.prefs.StoryApplication;
 
@@ -38,14 +40,30 @@ public class StoriesOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        openDatabase();
-        sqLiteDatabase.execSQL(StoryContract.StoryEntry.SQL_CREATE_ENTRIES);
-        sqLiteDatabase.execSQL(StoryContract.StoryEntry.SQL_INSERT_ENTRIES);
+        try {
+            sqLiteDatabase.beginTransaction();
+            sqLiteDatabase.execSQL(StoryContract.StoryEntry.SQL_CREATE_ENTRIES);
+            sqLiteDatabase.execSQL(StoryContract.StoryEntry.SQL_INSERT_ENTRIES);
+            sqLiteDatabase.setTransactionSuccessful();
+        } catch (SQLiteException e) {
+            Log.e("OPENHELPER", e.getMessage());
+        } finally {
+            sqLiteDatabase.endTransaction();
+        }
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        try {
+            sqLiteDatabase.beginTransaction();
+            sqLiteDatabase.execSQL(StoryContract.StoryEntry.SQL_UPDATE_ENTRIES);
+            onCreate(sqLiteDatabase);
+            sqLiteDatabase.setTransactionSuccessful();
+        } catch (SQLiteException e) {
+            Log.e("OPENHELPER", e.getMessage());
+        } finally {
+            sqLiteDatabase.endTransaction();
+        }
     }
 
     public synchronized SQLiteDatabase openDatabase() {

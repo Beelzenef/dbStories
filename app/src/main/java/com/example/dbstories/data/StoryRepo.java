@@ -1,12 +1,8 @@
 package com.example.dbstories.data;
 
-import android.database.Cursor;
-import android.widget.CursorAdapter;
+import com.example.dbstories.InteractorCallback;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
 
 /**
  * Repositorio para historias
@@ -17,6 +13,8 @@ public class StoryRepo {
     // Atts
     private StoryDAO storyDAO;
     private static StoryRepo storyRepo;
+
+    InteractorCallback interactorCallback;
 
     // Constructor
     static {
@@ -44,11 +42,28 @@ public class StoryRepo {
         return storyDAO.contains(s);
     }
 
-    public long saveStory(Story s) {
-        return storyDAO.save(s);
+    public void saveStory(Story s, InteractorCallback interactorCallback) {
+        long id = storyDAO.save(s);
+        if (id == 0)
+            interactorCallback.onError();
+        else
+            interactorCallback.onSuccess();
+    }
+
+    public void updateStory(Story s) {
+        long id = storyDAO.update(s);
+        if (id == 0)
+            interactorCallback.onError();
+        else
+            interactorCallback.onSuccess();
     }
 
     public void deleteStory(Story s) {
-        storyDAO.delete(s);
+        long id = storyDAO.delete(s);
+        if (id == 0)
+            interactorCallback.onError();
+        else
+            interactorCallback.onSuccess();
+
     }
 }

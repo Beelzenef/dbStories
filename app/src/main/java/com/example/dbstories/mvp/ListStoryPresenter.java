@@ -22,11 +22,13 @@ public class ListStoryPresenter implements ListStoryContract.Presenter, ListStor
 
     @Override
     public void onSuccess(List<Story> list) {
+        //view.dismissProgressDialog();
         view.showStories(list);
     }
 
     @Override
     public void loadStories() {
+        //view.showProgressDialog();
         interactor.loadStories();
     }
 
