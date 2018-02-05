@@ -17,7 +17,7 @@ import android.widget.ListView;
 
 import com.example.dbstories.base.BasePresenter;
 import com.example.dbstories.data.StoriesAdapter;
-import com.example.dbstories.data.Story;
+import com.example.dbstories.data.pojo.Story;
 import com.example.dbstories.mvp.ListStoryContract;
 
 import java.util.List;

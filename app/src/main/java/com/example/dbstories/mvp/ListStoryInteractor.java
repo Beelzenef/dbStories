@@ -1,6 +1,6 @@
 package com.example.dbstories.mvp;
 
-import com.example.dbstories.data.Story;
+import com.example.dbstories.data.pojo.Story;
 
 import java.util.List;
 

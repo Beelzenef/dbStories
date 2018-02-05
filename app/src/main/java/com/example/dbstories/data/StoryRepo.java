@@ -1,6 +1,7 @@
 package com.example.dbstories.data;
 
 import com.example.dbstories.InteractorCallback;
+import com.example.dbstories.data.pojo.Story;
 
 import java.util.ArrayList;
 

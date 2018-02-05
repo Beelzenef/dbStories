@@ -1,4 +1,4 @@
-package com.example.dbstories.data;
+package com.example.dbstories.data.pojo;
 
 /**
  * POJO Story

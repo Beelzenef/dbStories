@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.dbstories.R;
-import com.example.dbstories.data.Story;
+import com.example.dbstories.data.pojo.Story;
 
 import java.util.ArrayList;
 

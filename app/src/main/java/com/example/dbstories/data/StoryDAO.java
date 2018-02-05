@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 import android.util.Log;
 
+import com.example.dbstories.data.pojo.Story;
+
 import java.util.ArrayList;
 
 /**
