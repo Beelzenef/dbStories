@@ -48,4 +48,15 @@ public class StoryContract {
                 "La soledad de Charles Dickens",
                 "D. Simmons");
     }
+
+    public static class ItemEntry implements BaseColumns {
+
+        public static final String TABLE_NAME = "item";
+        public static final String COLUMN_NOMBRE = "nombre";
+        public static final String COLUMN_STORYID = "idstory";
+        public static final String[] ALL_COLUMNS = new String[]{
+                BaseColumns._ID, COLUMN_NOMBRE, COLUMN_STORYID
+        };
+    }
+
 }

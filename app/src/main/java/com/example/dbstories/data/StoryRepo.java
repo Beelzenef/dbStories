@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class StoryRepo {
 
     // Atts
-    private StoryDAO storyDAO;
+    private com.example.dbstories.base.StoryDAO storyDAO;
     private static StoryRepo storyRepo;
 
     InteractorCallback interactorCallback;
@@ -39,12 +39,10 @@ public class StoryRepo {
         return storyRepo;
     }
 
-    public boolean existsStory(Story s) {
-        return storyDAO.contains(s);
-    }
+    //public boolean existsStory(Story s) { return storyDAO.contains(s); }
 
     public void saveStory(Story s, InteractorCallback interactorCallback) {
-        long id = storyDAO.save(s);
+        long id = storyDAO.add(s);
         if (id == 0)
             interactorCallback.onError();
         else

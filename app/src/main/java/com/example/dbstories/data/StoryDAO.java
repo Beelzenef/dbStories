@@ -14,11 +14,12 @@ import java.util.ArrayList;
  * StoryDAO
  */
 
-class StoryDAO {
+class StoryDAO implements com.example.dbstories.base.StoryDAO {
 
     /**
      * Método que devuelve un cursor con todos los items de la tabla
      */
+    @Override
     public ArrayList<Story> loadAll() {
         final SQLiteDatabase sqLiteDatabase = StoriesOpenHelper.getInstance().openDatabase();
 
@@ -53,7 +54,8 @@ class StoryDAO {
     }
 
     // Añade un item a la BD
-    public long save(Story s) {
+    @Override
+    public long add(Story s) {
 
         SQLiteDatabase sqLiteDatabase = StoriesOpenHelper.getInstance().openDatabase();
 
@@ -65,6 +67,7 @@ class StoryDAO {
     }
 
     // Elimina un item en la BD
+    @Override
     public long delete(Story s) {
 
         SQLiteDatabase sqLiteDatabase = StoriesOpenHelper.getInstance().openDatabase();
@@ -75,6 +78,7 @@ class StoryDAO {
         return id;
     }
 
+    @Override
     public long update(Story s) {
         SQLiteDatabase sqLiteDatabase = StoriesOpenHelper.getInstance().openDatabase();
 

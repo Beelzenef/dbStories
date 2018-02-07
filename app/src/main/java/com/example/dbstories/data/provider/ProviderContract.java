@@ -3,6 +3,8 @@ package com.example.dbstories.data.provider;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
+import com.example.dbstories.data.StoryContract;
+
 import java.util.HashMap;
 
 /**
@@ -30,8 +32,8 @@ public final class ProviderContract {
 
         static {
             projectionMap = new HashMap<>();
-            projectionMap.put(COLUMN_TITLE, COLUMN_TITLE);
-            projectionMap.put(COLUMN_AUTHOR, COLUMN_AUTHOR);
+            projectionMap.put(COLUMN_TITLE, StoryContract.StoryEntry.COLUMN_TITLE);
+            projectionMap.put(COLUMN_AUTHOR, StoryContract.StoryEntry.COLUMN_AUTHOR);
         }
     }
 
@@ -49,8 +51,8 @@ public final class ProviderContract {
 
         static {
             projectionMap = new HashMap<>();
-            projectionMap.put(COLUMN_NAME, COLUMN_NAME);
-            projectionMap.put(COLUMN_STORYID, COLUMN_STORYID);
+            projectionMap.put(COLUMN_NAME, StoryContract.ItemEntry.COLUMN_NOMBRE);
+            projectionMap.put(COLUMN_STORYID, StoryContract.ItemEntry.COLUMN_STORYID);
         }
     }
 
