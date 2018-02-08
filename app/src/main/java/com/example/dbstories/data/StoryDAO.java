@@ -96,7 +96,8 @@ class StoryDAO implements com.example.dbstories.base.StoryDAO {
         return false;
     }
 
-    private ContentValues generateContentValues(Story s) {
+    @Override
+    public ContentValues generateContentValues(Story s) {
         ContentValues cV = new ContentValues();
         cV.put(StoryContract.StoryEntry.COLUMN_ID, s.getId());
         cV.put(StoryContract.StoryEntry.COLUMN_TITLE, s.getTitle());
